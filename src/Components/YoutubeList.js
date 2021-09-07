@@ -1,17 +1,18 @@
 import React,{useState} from 'react'
+import YtText from './YtText'
 
 const YoutubeList = () => {
     const[youtubeList,setYoutubeList] = useState([
               {
                   title:'Youtube videos',
-                  channel:'Developer view',
+                  chanel:'Developer view',
                   views:'20,000000',
                   time:'May 1, 2019'
 
               },
               {
                 title:'cooking videos',
-                channel:'creating',
+                chanel:'creating',
                 views:'22,000000',
                 time:'May 1, 2019'
 
@@ -19,27 +20,23 @@ const YoutubeList = () => {
 
             {
                 title:'learning videos',
-                channel:'tech',
+                chanel:'tech',
                 views:'20,000000',
                 time:'May 1, 2019'
 
             },
             {
                 title:'art and crafts',
-                channel:'Developer',
+                chanel:'Developer',
                 views:'20,000000',
                 time:'May 1, 2019'
 
             }
-
-
-
-
-    ])
+     ])
     return (
         <div>
             {youtubeList.map(yt => (
-             <li>{yt.time}</li>
+                <YtText title={yt.title} />
             ))}
         </div>
     )
