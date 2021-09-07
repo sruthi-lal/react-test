@@ -1,42 +1,14 @@
-import React,{useState} from 'react'
+import React,{useState, useContext} from 'react'
 import YtText from './YtText'
+import { YtContext } from './YtContext'
 
 const YoutubeList = () => {
-    const[youtubeList,setYoutubeList] = useState([
-              {
-                  title:'Youtube videos',
-                  chanel:'Developer view',
-                  views:'20,000000',
-                  time:'May 1, 2019'
-
-              },
-              {
-                title:'cooking videos',
-                chanel:'creating',
-                views:'22,000000',
-                time:'May 1, 2019'
-
-            },
-
-            {
-                title:'learning videos',
-                chanel:'tech',
-                views:'20,000000',
-                time:'May 1, 2019'
-
-            },
-            {
-                title:'art and crafts',
-                chanel:'Developer',
-                views:'20,000000',
-                time:'May 1, 2019'
-
-            }
-     ])
+   const [youtubeList,setYoutubeList] = useContext(YtContext)
     return (
         <div>
+            
             {youtubeList.map(yt => (
-                <YtText title={yt.title} />
+                <YtText title={yt.title} chanel={yt.chanel}  />
             ))}
         </div>
     )
